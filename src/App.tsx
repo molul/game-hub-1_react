@@ -11,7 +11,7 @@ import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
-  platform: Platform | null;
+  parent_platforms: Platform | null;
   sortOrder: string;
   searchText: string;
 }
@@ -50,9 +50,9 @@ function App() {
           <Flex marginBottom={5}>
             <Box marginRight={5}>
               <PlatformSelector
-                selectedPlatform={gameQuery.platform}
-                onSelectPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
+                selectedPlatform={gameQuery.parent_platforms}
+                onSelectPlatform={(parent_platforms) =>
+                  setGameQuery({ ...gameQuery, parent_platforms })
                 }
               />
             </Box>

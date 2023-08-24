@@ -12,7 +12,7 @@ export interface Game {
   id: number;
   name: string;
 	background_image: string;
-	parent_platforms: { platform: Platform}[];
+	parent_platforms: { parent_platforms: Platform}[];
 	metacritic: number;
 	rating_top: number;
 	rating: number;
@@ -24,7 +24,7 @@ const useGames = (gameQuery: GameQuery) => useData<Game>(
 	{
 		params: { 
 			genres: gameQuery.genre?.id, 
-			platforms: gameQuery.platform?.id,
+			parent_platforms: gameQuery.parent_platforms?.id,
 			ordering: gameQuery.sortOrder,
 			search: gameQuery.searchText
 		}
